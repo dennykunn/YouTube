@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website - Vanilla Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/stars.png" id="stars">
+        <img src="images/moon.png" id="moon">
+        <img src="images/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="images/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni asperiores eveniet eum molestiae debitis quaerat quasi sunt? Ullam, dolor accusamus amet dolorum dolore reiciendis quos iure vel ut molestiae inventore enim labore cum, tempore reprehenderit obcaecati repudiandae aliquam. Repudiandae quaerat nobis, molestiae maiores quam porro reprehenderit, voluptatum nemo nostrum architecto quasi reiciendis quisquam deserunt, deleniti ullam illo et est quod eum expedita. <br><br> Placeat deleniti, atque libero voluptates mollitia perferendis quia soluta culpa cum accusamus similique. Modi ipsa illum quos dolores laboriosam alias itaque autem, voluptatum in libero sapiente velit omnis molestias saepe vel nesciunt soluta quod a delectus nam suscipit quo eius ab. Quod ad numquam consequatur sapiente optio aperiam in illum aspernatur beatae, molestias tenetur unde magni repellendus, deleniti modi alias iusto magnam cupiditate necessitatibus eligendi. <br><br> Atque aliquam voluptate, perferendis porro aspernatur veritatis. Alias, laudantium ea at nesciunt tenetur quo ipsum expedita temporibus natus laboriosam error nobis ducimus vitae rerum aut officiis, eius quam ullam! Modi tempore suscipit ipsum porro laboriosam provident beatae quaerat vitae asperiores ratione illo eveniet quisquam reiciendis est quasi exercitationem, deleniti dolorum, amet animi, culpa voluptate similique laudantium laborum officiis. <br><br>Assumenda qui cupiditate natus sunt deleniti corrupti ratione alias libero perspiciatis. Repellat, quibusdam velit tenetur perspiciatis possimus consequuntur deleniti quasi commodi dolorum officia magnam, numquam unde nam exercitationem illum. Ratione enim et ipsa possimus ab, officia, eligendi nesciunt vitae recusandae corrupti maxime itaque distinctio adipisci? Dolor nesciunt, nihil fugit debitis consequatur, ut perspiciatis est dolore qui iure modi nulla magni repudiandae! Quo rerum quidem ducimus dicta, voluptatibus corporis est, facilis blanditiis neque perspiciatis dolores quia, magnam enim illum reiciendis accusamus asperiores ipsam minus. Eligendi quas, modi dolor blanditiis quis mollitia enim iste unde voluptatibus maxime! Ut excepturi quidem porro. <br><br>Illum assumenda officiis fugiat itaque nam. Nostrum aliquam veritatis nulla, obcaecati pariatur ipsum maiores repellendus atque fugiat recusandae amet voluptas illo omnis minus. Cumque nesciunt unde eius, minus sint rerum ducimus culpa. Eaque in consequatur pariatur fugiat minus, distinctio cumque voluptatibus vitae non? <br><br>Blanditiis ipsum tempora ratione fugit ut! Magnam accusantium totam laboriosam delectus, illum voluptatibus a unde temporibus fuga praesentium ullam asperiores magni animi laborum maiores necessitatibus dignissimos enim libero minus perspiciatis cupiditate aliquam aperiam id impedit? Expedita, voluptate excepturi a inventore laboriosam debitis libero deleniti explicabo animi quod facere culpa quos nostrum voluptatibus atque, magnam cupiditate temporibus? Veritatis distinctio numquam dolore maxime iure tenetur enim, quidem necessitatibus eius eum corporis dolorem harum esse officia cum dolores quia asperiores reprehenderit alias! <br><br>Alias impedit rem temporibus dolore, facilis iure voluptatibus amet asperiores culpa laudantium dignissimos veniam sed iste, aperiam ipsum maxime voluptatum commodi reiciendis doloremque, optio quos vero ea dicta? Labore eligendi ducimus praesentium obcaecati molestiae molestias quae et eum, quasi enim incidunt porro aliquam, commodi dicta perspiciatis eius rem ab consectetur repudiandae nam? Minus sunt temporibus natus perferendis voluptatibus aliquid totam ut vero. Consequatur labore necessitatibus minus sapiente, ducimus nihil autem dolores illo eligendi blanditiis possimus quibusdam odio quam explicabo quia vel atque molestiae et debitis repudiandae facilis maiores. Iusto qui autem repellendus sed asperiores!</p>
+    </div>
+
+    <script>
+        let stars = document.getElementById("stars");
+        let moon = document.getElementById("moon");
+        let mountains_behind = document.getElementById("mountains_behind");
+        let text = document.getElementById("text");
+        let btn = document.getElementById("btn");
+        let mountains_front = document.getElementById("mountains_front");
+        let header = document.querySelector("header");
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
